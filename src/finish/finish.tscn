@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://d2yqbh2ssmogc"]
+
+[ext_resource type="Script" uid="uid://ruc5bmabmw3t" path="res://src/finish/finish.gd" id="1_oh4la"]
+[ext_resource type="Texture2D" uid="uid://dsh3nd5neh2vv" path="res://finish.png" id="2_4wn71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s2xs"]
+size = Vector2(52, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nukwt"]
+atlas = ExtResource("2_4wn71")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twbd7"]
+atlas = ExtResource("2_4wn71")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iu1k"]
+atlas = ExtResource("2_4wn71")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5edru"]
+atlas = ExtResource("2_4wn71")
+region = Rect2(0, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rxda"]
+atlas = ExtResource("2_4wn71")
+region = Rect2(8, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iooki"]
+atlas = ExtResource("2_4wn71")
+region = Rect2(16, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la77w"]
+atlas = ExtResource("2_4wn71")
+region = Rect2(0, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v584c"]
+atlas = ExtResource("2_4wn71")
+region = Rect2(8, 16, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_surfo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nukwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twbd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iu1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5edru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rxda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iooki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la77w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v584c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="finish" type="Node2D"]
+script = ExtResource("1_oh4la")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_2s2xs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(6.4, 6.4)
+sprite_frames = SubResource("SpriteFrames_surfo")
+autoplay = "default"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

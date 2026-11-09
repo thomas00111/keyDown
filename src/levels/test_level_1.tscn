@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://c04jfrcrutvnd"]
+
+[ext_resource type="PackedScene" uid="uid://ducp7rsjpf40n" path="res://src/player/player.tscn" id="1_cxdpd"]
+[ext_resource type="Script" uid="uid://buf3jraeyxys7" path="res://src/levels/level.gd" id="1_vs6eh"]
+[ext_resource type="PackedScene" uid="uid://d2yqbh2ssmogc" path="res://src/finish/finish.tscn" id="3_ax1fg"]
+[ext_resource type="PackedScene" uid="uid://ck10hbat2qe0u" path="res://src/block/2by3.tscn" id="4_l0uto"]
+[ext_resource type="PackedScene" uid="uid://dxjkjcx1ph830" path="res://src/block/block.tscn" id="5_jp37h"]
+
+[node name="TestLevel1" type="Node2D"]
+script = ExtResource("1_vs6eh")
+
+[node name="respawn" type="Marker2D" parent="."]
+position = Vector2(189.08499, 614)
+
+[node name="finish" parent="." instance=ExtResource("3_ax1fg")]
+position = Vector2(1852, 247)
+
+[node name="Player" parent="." instance=ExtResource("1_cxdpd")]
+position = Vector2(189, 633)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(139, 360)
+position_smoothing_enabled = true
+
+[node name="2By3" parent="." instance=ExtResource("4_l0uto")]
+position = Vector2(151, 665)
+
+[node name="2By4" parent="." instance=ExtResource("4_l0uto")]
+position = Vector2(502, 585)
+
+[node name="block" parent="." instance=ExtResource("5_jp37h")]
+position = Vector2(412, 364)
+
+[node name="block2" parent="." instance=ExtResource("5_jp37h")]
+position = Vector2(826, 667)
+
+[node name="block3" parent="." instance=ExtResource("5_jp37h")]
+position = Vector2(751, 470)
+
+[node name="2By5" parent="." instance=ExtResource("4_l0uto")]
+position = Vector2(1022, 196)
+
+[node name="2By6" parent="." instance=ExtResource("4_l0uto")]
+position = Vector2(1109, 550)
+
+[node name="block4" parent="." instance=ExtResource("5_jp37h")]
+position = Vector2(901, 357)
+
+[node name="2By7" parent="." instance=ExtResource("4_l0uto")]
+position = Vector2(1289, 371)
+
+[node name="block5" parent="." instance=ExtResource("5_jp37h")]
+position = Vector2(1343, 184)
+
+[node name="block6" parent="." instance=ExtResource("5_jp37h")]
+position = Vector2(1576, 547)
+
+[node name="block7" parent="." instance=ExtResource("5_jp37h")]
+position = Vector2(1586, 329)
+
+[node name="2By8" parent="." instance=ExtResource("4_l0uto")]
+position = Vector2(1750, 436)

@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkhsetplmriij"]
+
+[ext_resource type="Texture2D" uid="uid://b5ynwy20x2jen" path="res://bumper.png" id="1_6bex3"]
+[ext_resource type="Script" uid="uid://c5lq07kweorjc" path="res://src/block/bumper.gd" id="2_pr6l1"]
+[ext_resource type="Texture2D" uid="uid://drgityre54x5a" path="res://bumperUsed.png" id="2_slygk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efr8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6bex3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_slygk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slygk"]
+size = Vector2(8.125, 8.125)
+
+[node name="bumper" type="AnimatedSprite2D"]
+texture_filter = 1
+scale = Vector2(6.4, 6.4)
+sprite_frames = SubResource("SpriteFrames_efr8k")
+script = ExtResource("2_pr6l1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_slygk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

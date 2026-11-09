@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://brkdityf5s4i2"]
+
+[ext_resource type="Script" uid="uid://c1u1vt8xlhw85" path="res://src/menu/main_menu.gd" id="1_jnurs"]
+[ext_resource type="FontFile" uid="uid://deigafms13kwm" path="res://Tiny5-Regular.ttf" id="2_ksh7p"]
+[ext_resource type="Texture2D" uid="uid://lt60b68lrg8a" path="res://button.png" id="2_wjpnt"]
+[ext_resource type="Texture2D" uid="uid://xldvj6p5158h" path="res://logo.png" id="4_dpqac"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpqac"]
+texture = ExtResource("2_wjpnt")
+region_rect = Rect2(0, 0, 16, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0pcti"]
+texture = ExtResource("2_wjpnt")
+region_rect = Rect2(0, 8, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dbdp0"]
+texture = ExtResource("2_wjpnt")
+region_rect = Rect2(0, 8, 16, 16)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jnurs")
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43
+anchor_top = 0.744
+anchor_right = 0.578
+anchor_bottom = 0.84700006
+offset_left = 0.5999756
+offset_top = 0.32000732
+offset_right = 0.15997314
+offset_bottom = 0.15997314
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.3254405, 0.3254411, 0.3254406, 1)
+theme_override_colors/font_hover_color = Color(0.3254902, 0.3254902, 0.3254902, 1)
+theme_override_fonts/font = ExtResource("2_ksh7p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_dpqac")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0pcti")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dbdp0")
+text = "PLAY"
+
+[node name="Logo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(653.00006, 232.00002)
+scale = Vector2(11.915, 11.915)
+texture = ExtResource("4_dpqac")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

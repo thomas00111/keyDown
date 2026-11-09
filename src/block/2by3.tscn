@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck10hbat2qe0u"]
+
+[ext_resource type="Texture2D" uid="uid://3thcpe7kdobb" path="res://spritesheet8.png" id="1_w8jvn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l846"]
+size = Vector2(154, 103)
+
+[node name="2By3" type="StaticBody2D"]
+
+[node name="SpriteSheet" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 25.5)
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("1_w8jvn")
+region_enabled = true
+region_rect = Rect2(8, 0, 8, 16)
+
+[node name="SpriteSheet2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(51.1, 0)
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("1_w8jvn")
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="SpriteSheet4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(51.1, 51.1)
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("1_w8jvn")
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="SpriteSheet3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(102.2, 25.5)
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("1_w8jvn")
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(51, 25.5)
+shape = SubResource("RectangleShape2D_2l846")

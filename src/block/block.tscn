@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxjkjcx1ph830"]
+
+[ext_resource type="Texture2D" uid="uid://3thcpe7kdobb" path="res://spritesheet8.png" id="1_rx3mf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m11us"]
+size = Vector2(52, 52)
+
+[node name="block" type="StaticBody2D"]
+
+[node name="SpriteSheet" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.9073486e-06, 1.9073486e-06)
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("1_rx3mf")
+region_enabled = true
+region_rect = Rect2(0, 8, 8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m11us")
